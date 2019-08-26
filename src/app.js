@@ -4,19 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
   new Vue({
     el:"#app",
     data: {
-      items: [{name: "Wash Car", done: false},
+      tasks: [{name: "Wash Car", done: false},
     {name: "Buy Shopping", done: false},
-    {name: "Clean bathroom", done: false}]
-    newItem: ""
+    {name: "Clean bathroom", done: false}],
+    newTask: ""
     },
     methods: {
-      saveNewItem: function() {
-        const itemToAdd = {name: this.newItem, done: false}
-        this.items.push(itemToAdd);
-        this.newItem = "";
+      saveNewTask: function() {
+        const taskToAdd = {name: this.newTask, done: false}
+        this.tasks.push(taskToAdd);
+        this.newTask = "";
       },
-      doneItem: function (index) {
-        this.items[index].done = true;
+      doneTask: function (index) {
+        this.tasks[index].done = true;
       }
     }
   });
