@@ -20,7 +20,12 @@
     </ul>
 
     <input type="text" v-model="newTask"  />
+
+    <input type="radio" value="High" v-model="newPriority" />High
+    <input type="radio" value="Low" v-model="newPriority"  />Low
+
     <button @click="saveNewTask">Save New Task</button>
+
   </div>
 </body>
 </html>

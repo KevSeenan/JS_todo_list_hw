@@ -7,16 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
       tasks: [{name: "Wash Car", priority: "Low", done: false},
     {name: "Buy Shopping", priority: "High", done: false},
     {name: "Clean Bathroom", priority: "Low", done: false}],
-    newTask: ""
+    newTask: "",
+    newPriority: ""
     },
     methods: {
       saveNewTask: function () {
-        const taskToAdd = {name: this.newTask, priority: "blah", done: false}
+        const taskToAdd = {name: this.newTask, priority: this.newPriority, done: false}
         this.tasks.push(taskToAdd);
         this.newTask = "";
       },
       doneTask: function (index) {
         this.tasks[index].done = true;
+      },
+      saveNewPriority: function () {
+        const taskPriority = {priority: this.newPriority}
+        this.tasks.push(taskPriority);
+        this.newPriority = "";
       }
     }
   });
