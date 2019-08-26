@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>To-Do List</title>
+  <link rel="stylesheet" href="./css/styles.css">
   <script src="./js/bundle.js"></script>
 </head>
 <body>
@@ -12,6 +13,7 @@
     <ul>
       <li v-for="(task, index) in tasks" v-bind:class="task.done ? 'done':'notDone' ">
       <span>{{task.name}}</span>
+      <span>{{task.priority}}</span>
       <span v-if="task.done">Done</span>
       <button v-if="!task.done" @click="doneTask(index)">Task Done?</button>
       </li>
